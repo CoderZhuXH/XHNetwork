@@ -20,15 +20,15 @@
     [super viewDidLoad];
     
     
-    [XHNetwork POST:@"https://www.myeevy.com/https.php" parameters:nil success:^(id responseObject) {
-        
-        
-        NSLog(@"res=%@",responseObject);
-        
-    } failure:^(NSError *error) {
-        
-        
-    }];
+//    [XHNetwork POST:@"https://www.myeevy.com/https.php" parameters:nil success:^(id responseObject) {
+//        
+//        
+//        NSLog(@"res=%@",responseObject);
+//        
+//    } failure:^(NSError *error) {
+//        
+//        
+//    }];
     
     // Do any additional setup after loading the view from its nib.
 }

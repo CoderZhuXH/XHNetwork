@@ -78,7 +78,7 @@
 		4B6AD4901D683C25004E1B0D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4B6AD4911D683C25004E1B0D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4B6AD4921D683C25004E1B0D /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		4B6AD4951D684638004E1B0D /* myeevy.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = myeevy.cer; sourceTree = "<group>"; };
+		4B6AD4951D684638004E1B0D /* myeevy.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = myeevy.cer; path = XHNetwork/myeevy.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +95,7 @@
 		4B6AD4381D6839EB004E1B0D = {
 			isa = PBXGroup;
 			children = (
+				4B6AD4951D684638004E1B0D /* myeevy.cer */,
 				4B6AD4591D683A70004E1B0D /* AFNetworking */,
 				4B6AD4551D683A1A004E1B0D /* XHNetwork */,
 				4B6AD4431D6839EB004E1B0D /* XHNetworkExample */,
@@ -139,7 +140,6 @@
 			children = (
 				4B6AD4561D683A2D004E1B0D /* XHNetwork.h */,
 				4B6AD4571D683A2D004E1B0D /* XHNetwork.m */,
-				4B6AD4951D684638004E1B0D /* myeevy.cer */,
 			);
 			path = XHNetwork;
 			sourceTree = "<group>";
@@ -430,6 +430,7 @@
 				4B6AD4541D6839EB004E1B0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
