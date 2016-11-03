@@ -29,21 +29,6 @@ typedef void(^XHNetworkFailure) (NSError *error);
 @interface XHNetwork : NSObject
 
 /**
- *  设置baseUrl(不设置,使用完整url)
- *
- *  APP启动时,在AppDelegate中设置一次就可以了
- *  @param baseUrl 接口基础url
- */
-+(void)setBaseUrl:(NSString *)baseUrl;
-
-/**
- *  获取baseUrl
- *
- *  @return baseUrl
- */
-+(NSString *)baseUrl;
-
-/**
  *  设置请求类型及返回数据类型(不设置,默认使用:请求类型-HTTP,返回数据类型-JSON)
  *
  *  APP启动时,在AppDelegate中设置一次就可以了
@@ -67,22 +52,22 @@ typedef void(^XHNetworkFailure) (NSError *error);
 /**
  *  POST请求
  *
- *  @param URL     URL String
- *  @param dic     参数
+ *  @param url     url String
+ *  @param params  参数
  *  @param success 成功回调
  *  @param failure 失败回调
  */
-+(void)POST:(NSString *)URL parameters:(NSDictionary *)dic success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure;
++(void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure;
 
 /**
  *  GET请求
  *
- *  @param URL     URL String
- *  @param dic     参数
+ *  @param url     url String
+ *  @param params  参数
  *  @param success 成功回调
  *  @param failure 失败回调
  */
-+(void)GET:(NSString *)URL parameters:(NSDictionary *)dic success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure;
++(void)getWithUrl:(NSString *)url params:(NSDictionary *)params success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure;
 
 #pragma mark-https相关
 /**
