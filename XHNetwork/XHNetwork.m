@@ -8,6 +8,8 @@
 
 #import "XHNetwork.h"
 #import "AFHTTPSessionManager.h"
+#import "XHNetworkCache.h"
+
 
 #ifdef DEBUG
 #define DebugLog(...) NSLog(__VA_ARGS__)
@@ -16,6 +18,12 @@
 #endif
 
 typedef NSURLSessionTask XHURLSessionTask;
+
+
+
+//数据请求成功状态码
+static NSNumber * xh_successCode=nil;
+
 
 static NSString *xh_networkBaseUrl = nil;
 static XHRequestType  xh_requestType  = XHRequestTypeJSON;
@@ -64,32 +72,32 @@ static BOOL xh_validatesDomainName = YES;
     xh_validatesDomainName = validatesDomainName;
 }
 
-+ (void)cancelRequestWithURL:(NSString *)url {
-    
-    if (url == nil) return;
-    
-    @synchronized(self) {
-        [[self allTasks] enumerateObjectsUsingBlock:^(XHURLSessionTask * _Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([task isKindOfClass:[XHURLSessionTask class]]
-                && [task.currentRequest.URL.absoluteString hasSuffix:url]) {
-                [task cancel];
-                [[self allTasks] removeObject:task];
-                return;
-            }
-        }];
-    };
-}
-+ (void)cancelAllRequest {
-    @synchronized(self) {
-        [[self allTasks] enumerateObjectsUsingBlock:^(XHURLSessionTask * _Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([task isKindOfClass:[XHURLSessionTask class]]) {
-                [task cancel];
-            }
-        }];
-        
-        [[self allTasks] removeAllObjects];
-    };
-}
+//+ (void)cancelRequestWithURL:(NSString *)url {
+//    
+//    if (url == nil) return;
+//    
+//    @synchronized(self) {
+//        [[self allTasks] enumerateObjectsUsingBlock:^(XHURLSessionTask * _Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+//            if ([task isKindOfClass:[XHURLSessionTask class]]
+//                && [task.currentRequest.URL.absoluteString hasSuffix:url]) {
+//                [task cancel];
+//                [[self allTasks] removeObject:task];
+//                return;
+//            }
+//        }];
+//    };
+//}
+//+ (void)cancelAllRequest {
+//    @synchronized(self) {
+//        [[self allTasks] enumerateObjectsUsingBlock:^(XHURLSessionTask * _Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+//            if ([task isKindOfClass:[XHURLSessionTask class]]) {
+//                [task cancel];
+//            }
+//        }];
+//        
+//        [[self allTasks] removeAllObjects];
+//    };
+//}
 
 +(void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure
 {
@@ -101,7 +109,7 @@ static BOOL xh_validatesDomainName = YES;
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         success(responseObject);
-        
+
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         DebugLog(@"error=%@",error);
@@ -132,6 +140,16 @@ static BOOL xh_validatesDomainName = YES;
 
 }
 
++(void)getWithUrl:(NSString *)url params:(NSDictionary *)params needCache:(BOOL)needCache success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure
+{
+    if(needCache)
+    {
+    
+    
+    }
+
+
+}
 #pragma mark - Private
 
 +(XHNetwork *)networkManger{
@@ -185,16 +203,16 @@ static BOOL xh_validatesDomainName = YES;
     return self;
 }
 
-+ (NSMutableArray *)allTasks {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (xh_requestTasks == nil) {
-            xh_requestTasks = [[NSMutableArray alloc] init];
-        }
-    });
-    
-    return xh_requestTasks;
-}
+//+ (NSMutableArray *)allTasks {
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        if (xh_requestTasks == nil) {
+//            xh_requestTasks = [[NSMutableArray alloc] init];
+//        }
+//    });
+//    
+//    return xh_requestTasks;
+//}
 + (AFSecurityPolicy*)customSecurityPolicy
 {
     NSString *cerPath = [[NSBundle mainBundle] pathForResource:xh_httpsCertificateName ofType:@"cer"];//证书的路径

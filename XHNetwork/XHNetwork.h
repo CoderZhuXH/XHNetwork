@@ -42,12 +42,13 @@ typedef void(^XHNetworkFailure) (NSError *error);
  *
  *  @param url 请求url
  */
-+ (void)cancelRequestWithURL:(NSString *)url;
+//+ (void)cancelRequestWithURL:(NSString *)url;
 
 /**
  *  取消所有请求
  */
-+ (void)cancelAllRequest;
+//+ (void)cancelAllRequest;
+
 
 /**
  *  POST请求
@@ -59,15 +60,28 @@ typedef void(^XHNetworkFailure) (NSError *error);
  */
 +(void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure;
 
+
 /**
- *  GET请求
- *
- *  @param url     url String
- *  @param params  参数
- *  @param success 成功回调
- *  @param failure 失败回调
+ GET请求
+
+ @param url url String
+ @param params 参数
+ @param success 成功回调
+ @param failure 失败回调
  */
 +(void)getWithUrl:(NSString *)url params:(NSDictionary *)params success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure;
+
+/**
+ GET请求
+
+ @param url url String
+ @param params 参数
+ @param needCache 是否需要获取缓存(默认NO,设为YES,若有缓存会优先取缓存回调一次,再请求数据回调一次,)
+ @param success 成功回调
+ @param failure 失败回调
+ */
++(void)getWithUrl:(NSString *)url params:(NSDictionary *)params needCache:(BOOL)needCache success:(XHNetworkSucess)success failure:(XHNetworkFailure)failure;
+
 
 #pragma mark-https相关
 /**

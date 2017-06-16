@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CABAFB11EF26D300091B659 /* XHNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CABAFB01EF26D300091B659 /* XHNetworkCache.m */; };
+		0CABAFB41EF26E8D0091B659 /* XHNetworkError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CABAFB31EF26E8D0091B659 /* XHNetworkError.m */; };
 		4B6AD4461D6839EB004E1B0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6AD4451D6839EB004E1B0D /* main.m */; };
 		4B6AD4491D6839EB004E1B0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6AD4481D6839EB004E1B0D /* AppDelegate.m */; };
 		4B6AD44B1D6839EB004E1B0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B6AD44A1D6839EB004E1B0D /* Assets.xcassets */; };
@@ -33,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CABAFAF1EF26D300091B659 /* XHNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNetworkCache.h; sourceTree = "<group>"; };
+		0CABAFB01EF26D300091B659 /* XHNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNetworkCache.m; sourceTree = "<group>"; };
+		0CABAFB21EF26E8D0091B659 /* XHNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNetworkError.h; sourceTree = "<group>"; };
+		0CABAFB31EF26E8D0091B659 /* XHNetworkError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNetworkError.m; sourceTree = "<group>"; };
 		4B6AD4411D6839EB004E1B0D /* XHNetworkExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHNetworkExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6AD4451D6839EB004E1B0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B6AD4471D6839EB004E1B0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -140,6 +146,10 @@
 			children = (
 				4B6AD4561D683A2D004E1B0D /* XHNetwork.h */,
 				4B6AD4571D683A2D004E1B0D /* XHNetwork.m */,
+				0CABAFAF1EF26D300091B659 /* XHNetworkCache.h */,
+				0CABAFB01EF26D300091B659 /* XHNetworkCache.m */,
+				0CABAFB21EF26E8D0091B659 /* XHNetworkError.h */,
+				0CABAFB31EF26E8D0091B659 /* XHNetworkError.m */,
 			);
 			path = XHNetwork;
 			sourceTree = "<group>";
@@ -288,7 +298,9 @@
 				4B6AD48E1D683A70004E1B0D /* UIRefreshControl+AFNetworking.m in Sources */,
 				4B6AD48F1D683A70004E1B0D /* UIWebView+AFNetworking.m in Sources */,
 				4B6AD47F1D683A70004E1B0D /* AFHTTPSessionManager.m in Sources */,
+				0CABAFB11EF26D300091B659 /* XHNetworkCache.m in Sources */,
 				4B6AD4871D683A70004E1B0D /* AFAutoPurgingImageCache.m in Sources */,
+				0CABAFB41EF26E8D0091B659 /* XHNetworkError.m in Sources */,
 				4B6AD4881D683A70004E1B0D /* AFImageDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
